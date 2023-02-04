@@ -1,0 +1,550 @@
+\documentclass[conference]{IEEEtran}
+\IEEEoverridecommandlockouts
+% The preceding line is only needed to identify funding in the first footnote. If that is unneeded, please comment it out.
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\usepackage[font=large,labelfont=bf]{caption}
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+\begin{document}
+
+\title{Process Mining\\
+{\footnotesize Applying data science to discover workflows while combining data mining and process analytics}}
+
+\author{
+\IEEEauthorblockN{Camino Yuste Laura Maria}
+\IEEEauthorblockA{\textit{Hannover Hochschule} \\
+\textit{Universidad Rey Juan Carlos}\\
+Madrid, Spain \\
+lm.camino.2020@alumnos.urjc.es}
+\and
+\IEEEauthorblockN{Vieilledent Mario}
+\IEEEauthorblockA{\textit{Hannover Hochschule} \\
+\textit{Institut d’Ingénierie Informatique de Limoges}\\
+Rodez, France \\
+mario.vieilledent@gmail.com}
+\and
+\IEEEauthorblockN{Al Nasouh Mohammad}
+\IEEEauthorblockA{\textit{Hannover Hochschule} \\
+\textit{University of applied sciences and arts}\\
+Hannover, Germany \\
+mohamadalnasoh123@gmail.com}
+\and
+\IEEEauthorblockN{Wolf Wolf Andreas}
+\IEEEauthorblockA{\textit{Hannover Hochschule} \\
+\textit{Universidad Rey Juan Carlos}\\
+Madrid, Spain \\
+andreaswolfwolf41202@gmail.com}
+\and
+\IEEEauthorblockN{El Moustamide el Ouazzani Usama}
+\IEEEauthorblockA{\textit{Hannover Hochschule} \\
+\textit{Institut d’Ingénierie Informatique de Limoges}\\
+Limoges, France \\
+usama.el-mousatmide-el-ouazzani@stud.hs-hannover.de}
+}
+
+\maketitle
+
+\begin{IEEEkeywords}
+Process Mining, Data Mining, BI, BMN, BPM, PM,  Business Process
+\end{IEEEkeywords}
+
+\section{Abstract}
+This paper will examine Process Mining under all of its angles, history, state of the art methods as well as real case applications under the form of study cases and demonstrations. 
+The methodology used in this paper is a summary of the knowledge behind Process Mining incorporating scientific papers, foundational documents and real use cases. 
+It concludes that Process Mining is a great tool to analyse business processes and that it will be increasingly applied in the business world due to the its growth potential and relative novelty.
+
+
+\section{Introduction}
+
+\subsection{What Is Process Mining}
+In our increasingly complex world, there is a need to optimize and improve business processes in organizations to keep up with market forces as well as to increase general efficiency and reduce the potential loss (monetary or in other resources) due to those inefficiencies. As an answer to this challenge Process Mining emerged in the early 2000s as a potential answer. The objective of Process Mining is to analyze and improve real-life processes by using data from process execution systems and workflow management systems (an example being \textbf{Fig. 1}).
+Process Mining (PM) analyzes and tracks processes inside businesses while using existing data to automatically display the real process. It’s like an X-ray of our business processes.
+The idea of Process Mining is to \textit{discover}, \textit{monitor} and \textit{improve} real processes by extracting knowledge from event logs (van der Aalst et al., 2012)
+It works by extracting knowledge from event logs which are generated from business data and then, it makes a model with all that data, so it is easy to discover inefficiencies, revealing their causes, quantifying their impact in the overall business, and giving insights of how to fix them.
+Basically, when we have a business in which several operations and events are tracking place simultaneously, it is very hard to know what is exactly happening in every step of the process. So, Process Mining takes all that data recorded in the logs, analyze it, and transform it in a more visual model in which it becomes simple to know what is going on, which process are affecting others and how are they all related. As a result we find that Process Mining is a good intersection between data science and process science (shown in \textbf{Fig. 3}).
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{WhatWeThinkVsRealFlow.png}
+    \caption{What we think is the flow of the process VS the real flow of the process}
+    \label{fig:modelDrawn}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{ExampleDataProcessModel.png}
+    \caption{Example of a data process model}
+    \label{fig:modelDrawn}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{DS_PS_PM.png}
+    \caption{Process Mining, data science and process science}
+    \label{fig:modelDrawn}
+\end{figure}
+
+\subsection{Event Log}
+
+Set of events, events are data elements composed on the event itself (what is it, and what is the data related to it), what or who is the source of the event, its timestamp and an ID.
+Each event logs is produced by one activity of a business process and is used as main resource for Process Mining.
+
+``Starting point for Process Mining is an event log''
+
+Process Mining: Overview and Opportunities
+
+\subsection{Process Model}
+
+A Process Model is a model built thanks to an event log  (like seen in \textbf{Fig. 2}). The Process Model helps understanding the real end-to-end business process it describes. The model is the graphical representation of the event log and it aims to be simple so it is understandable. Making, managing, improving process models is in the scope of Process Mining.
+
+There are algorithms used to build process models based on event logs, such as the $\alpha$-algorithm. Those are considered intelligent since they are not just simple algorithms that produce a well defined result given an input, but can produces different results related on which criteria is considered most important to discover a process model.
+
+Regarding to the GP3 of the Manifesto, process models should support concurrency, choice points and loops (and so do the algorithms for process discovery).
+
+\subsection{Activity}
+
+An activity or a task in a company is an operation made by a human or a system, at a specific date and time, and that can be done one other activities are done, and can as well allowing other activities to start.
+
+\section{Related Work}
+
+For the study of the subject and the writing of this article, we based ourselves on scientific articles describing Process Mining, in particular the Process Mining Manifesto.
+
+These articles present in detail the concepts and technologies related to the field of Process Mining, give guidelines for its future, and provide a basis for further research in this field.
+
+This article relies mainly on the Manifesto to define the types of Process Mining, to define terms, algorithms, etc.
+
+This article provides simple definitions of the basic elements of Process Mining, and attempts to analyse its functioning, impact, benefits, and future prospects through case studies.
+This article also presents the different algorithms of Process Mining and It contains a manual implementation of an Event Log with the application of an open-source Tool to test the Alpha Miner algorithm.
+
+\textit{Reinkemeyer Editor, L. (2020). Process Mining in action : Principles, use cases and outlook.}
+
+\textit{WIL VAN DER AALST, Eindhoven University of Technology. Process Mining: Overview and Opportunities}
+
+\section{History}
+The need to have a sort of X-ray of how a business process is being carried out is not new. Since the 19th century we have try to obtain a complete overview of our processes to have a better understanding of the business we own.
+That desire brings us back to the 21th century. In this era, people still trying to create pen and paper models reflecting the reality of their business processes, but a Computer Scientist of the Eindhoven university of Technology, Wil Van der Aalst, decided that it was about time to make this process more automatic and efficient and that is how Process Mining was born (in the \textbf{Fig. 4} we can see the principles).
+At first, the methods of Van der Aalst did not arise too much interest in the community, but at the beginning of the 21st century, people starting to show more and more interest in this new Process Mining concept.
+As it was gaining more and more recognition along the years, the IEEE publishes the Process Mining manifesto in 2012, promoting it.
+Nowadays, Process Mining is considered a require tool for every company that operates in this digital era since businesses have evolve and become much more complex, with a lot more processes going on simultaneously.
+For the future, researchers are trying to add AI techniques to Process Mining in order to expand it from traditional process logs to predictive models which can study and decipher human processes patterns and integrate them alongside the logs, making Process Mining completer and more accurate.
+
+
+\subsection{Goals}
+Process Mining seek to improve efficiency, compliance and to identify process improvement opportunities. Here are it's main goals:
+\begin{itemize}
+    \item Discover the actual processes from event logs so we can get a good insight of what is actually happen with each process.
+    \item Be able to compare the actual flow of process against a model to discover deviations and ensuring compliance.
+    \item Improve the process by identifying bottlenecks and inefficiencies.
+    \item Predict the likelihood of certain events 
+    \item Do performance measures
+\end{itemize}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=9cm]{6Goals.png}
+    \caption{Six principles of Process Mining from the Process Mining Manifesto   (van der Aalst et al., 2012)}
+    \label{fig:modelDrawn}
+\end{figure}
+
+
+\subsection{Benefits - Why To Use it?}
+
+All in all, there have to be a good reason to create a Process Model using mining techniques, in this case, the reason why so many companies are applying them is because of it's benefits.
+The main benefit of Process Mining techniques is that information is objectively compiled. In other words, Process Mining techniques are helpful because they gather information about what is actually happening according to an event log of an organization, and not what people think that is happening in the organization (Gupta \& Gupta, 2014). 
+This way of creating a model for our processes also provide us with the following advantages:
+
+\begin{itemize}
+    \item High Scale analysis throughout the entire organization
+    \item Accuracy based on facts
+    \item No bottleneck, deviation or inefficient processes that should be rethought
+    \item Continuously monitoring processes
+    \item Use in ANY industry
+    \item Applicable in EVERY area
+\end{itemize}
+
+\subsection{How Does it Work?}
+
+Process Mining can be divided into the following steps:
+
+\begin{enumerate}
+    \item \textbf{Reads digital footprint}: Every system generates a data footprint that Process Mining reads and transform in a process log to work with (In case it has not being previously provided).
+    \item \textbf{Model Generation}:Every system generates a data footprint that Process Mining reads and transform in a process log to work with (In case it has not being previously provided).
+    \item \textbf{Work over the model:} Once you know what is going on with your business, you can begin to fix all the problems. Process Mining allows you to focus on a specific area of business and you can start to prioritize and fix concrete problems from them.
+    \item \textbf{Monitoring}: Know that you have finish building your model and you have finish with all the necessary repairs, it’s time to see if it works! For a Process Mining to be successful is key to keep monitoring the business in case new inefficiencies appears.
+\end{enumerate}
+
+\subsection{Use Cases of Process Mining}
+As you can deduce, Process Mining is very flexible and can be use in several scenarios, some of the main ones are:
+\begin{itemize}
+    \item A business process in a company is growing, maybe scaled (e.g. vertically, horizontally) and getting more and more complex to understand, the company needs metrics and better abstraction in order to understand the process.
+    \item A company is split in teams, services, departments, or especially geographical location, also the system computing and the data storage might be separated in different geographical locations. Then the teams want to have a unique and clear vision of the business process that is understandable by everyone (i.e. for diverse point of views)
+    \item A business needs to form new contributors in an efficient way (no waste of time in rediscovering and trying to understand the process)
+    \item A business use an old or complex workflow that need to be improved for diverse reasons (e.g. the workflow is not sufficient enough or new rules or policies induce to change it) 
+\end{itemize}
+
+\section{The Three Types of Process Mining}
+
+There are 3 main types of Process Mining that you can apply (or mix)
+
+\subsection{Discovery}
+
+One of the central tasks of Process Mining is Process Discovery, where knowledge is extracted from event logs ( (Ghawi \& Pfeffer, 2016)). It Consist of going over the logs to automatically construct a model based on observable events from the logs, without outside influence. Since we want to apply Process Mining to workflow management systems to improve our businesses, we should develop algorithms able to cope with concurrency and complexity while avoiding overfitting or underfitting. Discovery is mainly use for discussing problems among stakeholders, generate improvement ideas form the model, enhance the model, or configure a Business Process Management System (BPM System).
+
+Discovery is mainly used for:
+\begin{itemize}
+    \item To find and discuss issues or weaknesses among stakeholders
+    \item To improve the system (especially its process)
+    \item To enhance the process models
+    \item To configure a Business Process Management System (BPM System)
+\end{itemize}
+
+Since one want to apply Process Mining to workflow management systems to improve our businesses, we have to use algorithms that should be able to cope with concurrency and complexity while avoiding over-fitting or under-fitting.\\
+
+There's 4 criteria (i.e., dimensions) that describe the quality of a process model:
+\begin{itemize}
+    \item Fitness (ability to describe all cases, number from 0 to 1)
+    \item Simplicity or Occam’s Razor (simplest = minimal working process model)
+    \item Precision (precise = does not allow to much behavior)
+    \item Generalization (one model to describe all cases = not over-fitting)
+\end{itemize}
+
+\subsection{Conformance}
+
+Conformance checking techniques relates events in the log to activities in the model  (van der Aalst, 2012). It uses a model and an event log as input and checks whether the actual model that have been provided is in fact reflected in practice. It identifies any deviation of the model from real data and looks for overfitting or underfitting cases. It is mainly used to check the accuracy of a model, to identify deviation cases, to judge the quality of a model and as a starting point for model enhancement.
+
+It is mainly used to:
+ \begin{itemize}
+    \item To check the conformance i.e., the accuracy of a model
+    \item To check the quality of existing documentation
+    \item To identify deviating cases
+    \item To find fragments of the process
+    \item To judge of the quality of a discovered process model
+    \item To improve discovery algorithms
+    \item Used as a starting point for model enhancement
+\end{itemize}
+
+\subsection{Enhancement}
+
+It consists of extend or improve an existing model with the event log and additional information. It extends the previous model and could make it useful for predictions and recommendations.
+
+\section{Comparison of Process Mining, Business Activity Management (BAM) and Data Mining}
+As we stated before, Process Mining is usually confuse with other techniques such as data mining or BPM. It's important to note that each one should be use in different use cases and therefore they should not be confuse or mistake.
+To understand this is important to define them and highlight their differents respect to Process Mining.
+
+\subsection{Business Process Management}
+
+BPM is a disciplined approach to identify, design, execute, document, measure, monitor and control both automated and nonautomated business processes to archive consistent, targeted result align with organization’s strategic goals. (Reinkemeyer Editor, 2020) 
+The main different between BPM and Process Mining is that BPM focuses on “To be processes in order to describe how processes should work”  (Reinkemeyer Editor, 2020) while Process Mining focus on modeling the processes that have already happened to get knowledge from then. One focus on describing how future processes should work (BPM) while the other focus on analyzing what already happened to learn from it (Process Mining).
+
+\subsection{Data Mining}
+On the other hand, people also tends to confuse Data Mining with Process Mining. Data mining is the process of discovering meaningful new correlations, patterns, and trends by sifting through large amounts of data stored in repositories, using pattern recognition technologies as well as statistical and mathematical techniques (Larose, 2014) whereas Process Mining is focusing on processes and not only the data that have been gathered. So the main difference between Process Mining and Data mining is that one is focusing only in data analysis where the other take a wider look and considered all the processes that have been carried on.
+
+\section{Discovery Algorithms}
+
+The primary aim of Process Mining is to investigate a scalable solution that can evaluate, compare and renk these Process Mining algorithms efficiently. (Gupta \& Gupta, 2014)
+
+\subsection{Alpha Miner}
+
+This algorithm helps us connect observed data and event logs in the discovery phase of a process model. It takes a set of events as input and return a model which represent the sequence of events that are more likely to happen.
+To do that, the alpha miner takes the set of events and transform them into a relationship with which it creates a petri net which describes the process model. For that, the alpha miner algorithm studies how the events have happened in the past, trying to find a pattern between them, like, for example, an event B that always occur after another event A have a dependency relation with A ($A\rightarrow B$, if A have not been execute, B could not be executed either).
+
+There are 4 main relationships that alpha miner algorithms look for:
+\begin{enumerate}
+    \item \textbf{Directly follows}: If $a>b$ ($a$ is directly follow by $b$)
+    \item \textbf{Sequence}: $a\rightarrow b$ ($a$ must be done before $b$ ($a>b$) and not $b>a$)
+    \item \textbf{Parallel}: $a||b$ ($a$ can be done before $b$ and vice versa. Both, $a>b$ and $b>a$)
+    \item \textbf{Non direct relationship}: $a\#b$ (Neither $a>b$ or $b>a$)
+\end{enumerate}
+
+With that information about relationships, we can create a footprint matrix as this one (\textbf{Fig. 5}):
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{FootprintMatrix.png}
+    \caption{Example of a footprint matrix obtained by alpha mining}
+    \label{fig:modelDrawn}
+\end{figure}
+
+All in all, the alpha miner algorithms follow these steps:
+
+\begin{enumerate}
+    \item Define all events
+    \item Define all possible Start events
+    \item Define all possible End events
+    \item Calculate sets of independent events. All events inside a set are independent from each other and the sets are casually related among themselves
+    \item Drop Non maximum sets (avoid repetition)
+    \item Create places for all derived sets and add start and end states to them
+    \item Draw the connections
+    \item Return the petri net (as seen in \textbf{Fig. 6})
+\end{enumerate}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{PetriNet.png}
+    \caption{Example of petri net from previous Matrix}
+    \label{fig:modelDrawn}
+\end{figure}
+
+\subsection{Heuristic Miner}
+
+It can cope well with noise, and it’s used to show the main behavior, which means that it does not repair on small details or and exceptions of the log but focus only on the main processes. Since it is a noise tolerant algorithm, it is applied to demonstrate how the model works in the presence of noise.
+Heuristic miner can be considered an extension of alpha miner which takes the frequency of traces in the log into account, mining the control flow of a process model. To do that, it only considers the order of events within a case, which means that it only takes into account the fields case id, time stamp and activity while doing the mining.
+
+Heuristic miner follows these steps:
+
+\begin{enumerate}
+    \item Read the log (like the one in \textbf{Fig. 7})
+    \item Get the set of tasks
+    \item Infer the ordering relations based on their frequency
+    \item Build the net based on the inferred relations
+    \item Output the net (\textbf{Fig. 8})
+\end{enumerate}
+
+This algorithm uses the same basic order relationships that the alpha miner but including a frequency metric to indicate how certain we are about a relation.
+Thanks to its characteristics, heuristic miner is particularly useful to describe scientific workflows in which we have lots of tasks being executed in parallel, some of which have a long distance dependency which discovery is really important.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{EventLogExample.png}
+    \caption{Example of an event log}
+    \label{fig:modelDrawn}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{PetriNet2.png}
+    \caption{Example of a petri net from the previous data}
+    \label{fig:modelDrawn}
+\end{figure}
+
+\subsection{Genetic Miner}
+
+When we are working with processes inside a whole business environment, we can find very well-defined processes which are complete and perfectly related to each other. Nevertheless, we can also find incomplete processes with noise and not so much cohesion. This is when the generic algorithm kicks in.
+A Generic Miner algorithm is used when we must tackle with incompleteness, noise, duplicate or hidden activities…
+To deal with all of that, Generic miner generates a petri net which represents the process model from execution traces. It calculates the quality of fitness of a candidate by comparing the model itself with the event log which can be very useful when we are working on a globally optimal process but very dangerous when we are trying to use it in a local approximation, given that an erroneous example could mees up the entire model.
+
+This algorithm has 3 main concerns:
+
+\begin{enumerate}
+    \item \textbf{First}: Define the internal representation (Search space).
+    \item \textbf{Second}: Define the fitness measure (Quality of a point in the search space considering the logs).
+    \item \textbf{Third}: Selection of generic operators (Crossover and mutation) to ensure that all points may be reach.
+\end{enumerate}
+
+The steps to create a generic algorithm are:
+
+\begin{enumerate}
+    \item \textbf{Read the event log}: We start by reading and processing the event log that we have been provided with.
+    \item \textbf{Build the initial population}: Once we have read the log, we have to select the initial population. Since it is the first population, it can contain all individuals of the search space (defined by the number of tasks of the log) or we could use an initial selection criterion.
+    \item \textbf{Calculate the fitness of the individuals}: Now that we have the initial population selected, we need to calculate the degree of fitness of each individual so we can find the fittest. We will assign a fittest range from 0 to 1 to each individual. If a concrete individual is correctly describing the registered behavior of the log, the higher its fitness will be.
+    \item \textbf{Return the fittest}: To find the fittest individuals, we applied the following strategies:
+    \begin{enumerate}
+        \item \textbf{Elitism}: We copy a certain percentage of the fittest individuals to the next population.
+        \item \textbf{Crossover}: We generate new individuals (offsprings) from the fittest individuals (parents), recombining the fittest material hoping that the combination will result in a fittest population.
+        \item \textbf{Mutation}: It consists of applying small changes on the fittest individuals hoping that these changes will return a fittest population.
+        \item \textbf{Tournament Selection}: Consist of randomly selecting 5 individuals and returning the fittest of them all.
+    \end{enumerate}
+    \item \textbf{Create next Population}:  We create a new population to be tested based on the results of the previous selection. This algorithm will stop if we have find an individual which fitness is 1, we have compute the maximum number of generations or the fittest individuals have not change in n/2 generations in a row.
+    If none of this conditions have been fulfilled, then the new population will be selected by following these steps:
+    \begin{enumerate}
+        \item Copy elitism rate X population Size of the best individuals of the current population.
+        \item While we have individuals to be created do:
+        \begin{enumerate}
+            \item Tournament selection on both parents
+            \item Select a random number between $0$ and $1$ (If it is less than the crossover rate, do a crossover with the parents)
+            \item 	Mutate the offsprings and copy then to the new population.
+        \end{enumerate}
+        \item Return the new population and keep going until it ends (and gives a result like \textbf{Fig. 9}).
+    \end{enumerate}
+\end{enumerate}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{PetriNet3.png}
+    \caption{Example of a petri net from a generic miner algorithm}
+    \label{fig:modelDrawn}
+\end{figure}
+
+\subsection{Inductive Miner}
+
+This algorithm in an improvement of alpha miner and heuristic miner, given that it provides a soundness process model with good values of fitness.
+This algorithm does not work on a petri net but on process trees (\textbf{Fig. 10}). It follows these steps:
+\begin{enumerate}
+    \item Find a prominent split in the event log (For example, the initialization event).
+    \item Keep recursively going thought the splits, searching for base cases and doing more splits.
+\end{enumerate}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{ProcessTree.png}
+    \caption{Example of a process tree}
+    \label{fig:modelDrawn}
+\end{figure}
+
+\subsection{Fuzzy Miner}
+
+This algorithm is especially useful when we want to mine less structured processes with a large amount of unstructured data. It also allows us to look at the process from different abstractions levels.
+It is used to avoid spaghetti like plots given that the fuzzy model it returns it’s a simplified version of the model or the unstructured data you have given it.
+
+\section{Case Study}
+
+\subsection{Manufacturing Process Analysis: a Case Study}
+
+A perfect use case study for us is the Samsung Electro-Mechanics Equipment Optimization Technology Group. The Samsung company along with the Ulsan National Institute studied how the data flows of the company are managed and how one could apply Process Mining to analyze manufacturing processes in Samsung Electro-Mechanic. 
+
+The company, Samsung Electro-Mechanics is one of the largest manufacturing companies in the East Asian region. They produce and manufacture high-tech integrated components and mechanical parts for electronical devices. All the data and MES of the company comes from the 30 divisions operated in Korea and overseas. The main data useful for exploitation is stored in event logs from the manufacturing execution systems (MES) in the company being analyzed with several Process Mining techniques. 
+
+A MES is a system that keeps track of the manufacturing processes and takes process-oriented information automatically, so it helps operation managers to make better decisions in manufacturing processes. Many manufacturing companies have adopted the MES system to provide the right information at the right time to control multiple elements of production processes. The MES uses a system where every lot (a basic unit in manufacturing) has a case ID number used to track the quantity or material. For this case study only lots from May to October 2012 have been tracked, giving us a total number of 11,226 cases and almost a million events. The study case was conducted with real event logs extracted from the Samsung MES to examine the validity of the framework that uses Process Mining techniques to help improve the manufacturing process with all the information processed by the framework.
+
+In order to analyze all this data, the companies use conventional data analysis techniques such as statistics, data mining. These techniques have difficulties to provide overall results, such as overall performance, manufacturing patterns, etc. MES generates a lot of data and makes it more difficult to understand overall processes with such many data. Process Mining techniques make it easier to extract all the information from the logs of the MES, so it can exploit the data of it and provide an accurate view of the manufacturing process. 
+
+The framework used to extract, exploit and interpret the data is the following one, consisting of 4 major steps (\textbf{Fig. 11}):
+\begin{enumerate}
+    \item \textbf{Data preparation}: Raw data is extracted from the MES system databases.
+    \item \textbf{Data preprocessing}: The raw data is filtered, refined and converted into a standard form (MXML)
+    \item \textbf{Manufacturing Process Mining and Analysis}: Several Process Mining techniques are applied according to the two perspectives of the model:
+    \begin{enumerate}
+        \item \textbf{Process}: A conduct process performance analysis (Bottleneck analysis, pattern analysis, conformance checking)
+        \item \textbf{Resource}: Resource performance analysis to find machine utilization
+    \end{enumerate}
+    \item \textbf{Evaluation and Interpretation}: Results are evaluated and interpreted by decision makers. After that, the existing processes are improved based on the interpreted results.
+\end{enumerate}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{image.png}
+    \caption{Production Process}
+    \label{fig:modelDrawn}
+\end{figure}
+
+Process perspective analysis extracts a manufacturing process model and provides performance analysis results of the model. The \textbf{Fig. 12} shown down shows the process model for one of Samsung Electro-Mechanics production processes, using the Heuristic mining algorithm [ref]. The model starts with the Input task and outputs the Packaging task and separates the manufacture process in three: preprocessing, main processing and inspection. 
+The once the model is discovered, a conformance check is done. The objective of the conformance check is to provide a value (called fitness value) of the derived model. For this model the value found is 0.9962 and indicated that almost all the traces fit the model (being close to 1). But as it is not perfect another analysis was performed using an LTL (linear temporal logic) checker that verifies the validity of paths as well as a Bottleneck analysis that checks where bottlenecks happen. It found abnormalities on the flow (\textbf{Fig. 13}) going from Delivery Inspection to the Final Test meaning that some unexpected issues occurred from the delivery to the inspection.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{image (1).png}
+    \caption{Steps}
+    \label{fig:modelDrawn}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{image (2).png}
+    \caption{Flow Diagram}
+    \label{fig:modelDrawn}
+\end{figure}
+
+Then again using the model and the raw data of the event log a machine performance analysis is done. That means we analyze what machine produces what lot and created a matrix of those (\textbf{Fig. 14}).
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{image (3).png}
+    \caption{Table}
+    \label{fig:modelDrawn}
+\end{figure}
+
+There was found to be a huge imbalance between the different machine with half the machines producing less than 600 lots and one machine producing 5612. Added to that another analysis of the average working time for each machine was realized and found that relative to production the N28026 is the most efficient and N20031 has the largest average per production meaning the machine is the least efficient. To investigate the inefficiency of the N20031 machine, the event log was used, and it showed that 90\% of the cases are finished in under 5 hours but some fringe cases could take up to a day thus reducing enlarging the production costs and reducing the machine efficiency.
+
+\subsection{Conclusion}
+
+The main contribution of this case study is that the proposed framework can be applied to any manufacturing process analysis and can provide insight into the current manufacturing processes. The derived discovered process model (due to the heuristic algorithm) shows the flows of processed in the factory and can be used as a basis for further analysis of how to reduce bottlenecks, how to mainstream some superfluous flows or which machines of the flow are more efficient than others. In this case the event log showed an already streamlined flow of the processes of Samsung Electro-Mechanics but in another company the process model derived from the event log with a simple analysis could lead to huge organizational gains as it would easily show the inefficiencies and how to tackle them.
+
+\section{Implementation and Tests of Discovery}
+An idea to complete our analysis was to produce an event log, feed the the event log as the data input and use an open source discovery algorithm in order to discover the model. So accordingly, we developed a small concurrent GoLang application that generates a random event log following some specific rules that were chosen by us.\\
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{picture_model_drawn.jpg}
+    \caption{Process model drawn before implementing code}
+    \label{fig:modelDrawn}
+\end{figure}
+
+Before implementing the event log generator, we defined the rules and drew a business process model (as can be seen in \textbf{Fig. 15}).\\
+
+This application creates a number of random students (here the number being defined by $n$) who want to register in an university. The people in charge of the student registration (called Responsible people) will ask students to provide more information if they did not sent enough, refuse or accept their candidacy. Also, after a deadline, all activities are stopped and the whole process is terminated.\\
+
+The program works concurrently and takes in account the fact that some students take a random amount of time to provide their information. The people in the university, with specific roles, do their tasks and take some time to do it. Therefore, the tasks are stored in a FIFO (First In, First ) list before being processed.
+
+It's for this need of concurrency and easy management of channels that we decided to use the programming language Go, a simple compiled programming language that is very powerful for concurrent programs.\\
+
+When running the program, a new event log is generated in JSON and in CSV. This event log (\textbf{Fig. 16}) contains 1 process with 100 different students, and many more activities, each related to one of the 100 students. Each activity has a timestamp.
+
+With several event logs generated (that are not the same because of the random generation in the application), we want to test Alpha Miner algorithm to produce a process model.
+
+We chose a popular open-source tool for Process Mining: \textbf{ProM Lite 1.3}, \url{https://www.promtools.org/doku.php}. With this tool, we parsed the event log data into a so called XES format that knows which column is grouping activities together, and which column is defining the tasks (\textbf{Fig. 17}).\\
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{Prom.csv.png}
+    \caption{Process model drawn before implementing code}
+    \label{fig:Prom}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{Prom.csv2.png}
+    \caption{Process model drawn before implementing code}
+    \label{fig:Prom2}
+\end{figure}
+
+With the XES format, we can use the \textbf{AlphaMiner algorithm} to discover algorithm to produce a BPM (\textbf{Fig. 18}) . The generation is surprisingly close to the process drawn at first (\textbf{Fig. 15}). We can see that Alpha Miner produces a rather high quality model.
+
+\begin{enumerate}
+    \item \textbf{Fitness}. We can find that there is the process going from \textit{Ask register again} to \textit{Receive} that allows a student to register again before deadline is reached. However it turns out this was a mistake in the source code we developed, therefore we can consider this model to have a perfect fitness.
+    \item \textbf{Simplicity}, the model seem to be as simple as possible, each activity is shown once in the model, we can see that there is no superfluous activity or extra arrows.
+    \item \textbf{Precision}, our workflow being very simple, it's quite hard for a model to generate a non-precise model, the one generated has a good precision, that we can consider ideal, so it is not under-fitting.
+    \item \textbf{Generalization}, again, the workflow we imagined is simple enough to be easily generalized, so the model generated is not over-fitting.
+\end{enumerate}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=8cm]{alphaMinerDiscovery.png}
+    \caption{Process model drawn before implementing code}
+    \label{fig:alphaMinerDiscovery}
+\end{figure}
+
+This specific implementation, the test of a Process Mining tool and the use of Alpha Miner algorithm let us put our knowledge into practice and discover the potential of these tools.
+
+\subsection{Source Code}
+
+All the source code of the Go application is available in this GitHub repository: \url{https://github.com/MarioVieilledent/ProcessSimulator---Process-Mining}
+
+\section{Conclusion - The Potential of Process Mining}
+
+In summary, Process Mining is a great strategy to analyse and monitor business processes in order to get a better understanding of them. In contrast to data mining, the focus is on the processes and not the data.
+
+Process Mining pursues various goals, on the one hand, an analysis of a business model is carried out with regard to accuracy on the basis of facts, on the other hand, the processes are continuously monitored and over-folded so that bottlenecks and deviations can be discovered.
+
+Process Mining also brings many advantages, it can reveal it very useful for any company to apply Process Mining ideas to improve quality and productivity. Firstly, it can be applied in any industry and in any field. Secondly, companies can save costs, increase productivity and improve performance with the help of Process Mining.
+
+In addition, there are various open-source tools and algorithms that support and promote Process Mining. Although a lot of papers have been published, a lot of Process Mining algorithms are developed and it exists already several Process Mining tools, there is still a lot to discover and to research.
+
+Keeping this in mind, it still has a lot of room to grow and evolve. It is believed that it will lead us towards great improvements in the near future.
+
+\begin{thebibliography}{00}
+
+\bibitem{b1} Ghawi, R., \& Pfeffer, J. (2016). Mining social networks from linked open data Springer International Publishing. doi:10.1007/978-3-030-23182-8\_16
+
+\bibitem{b2} Gupta, E., \& Gupta, A. E. (2014). Process Mining algorithms Process Mining algorithms
+
+\bibitem{b3} Larose, D. T. (2014). In Larose C. D. (Ed.), Discovering knowledge in data : An introduction to data mining / daniel T. larose, chantal D. larose (2nd ed. ed.) Hoboken, New Jersey : IEEE.
+
+\bibitem{b4} Reinkemeyer Editor, L. (2020). Process Mining in action : Principles, use cases and outlook. Cham: Springer International Publishing. doi:10.1007/978-3-030-40172-6 
+
+\bibitem{b5} WIL VAN DER AALST, Eindhoven University of Technology. Process Mining: Overview and Opportunities
+
+\bibitem{b6} van der Aalst, W. (2012). Process Mining. ACM Transactions on Management Information Systems, 3(2), 1-17. doi:10.1145/2229156.2229157
+
+\bibitem{b7} van der Aalst, W., Adriansyah, A., de Medeiros, A.,Karla Alves, Arcieri, F., Baier, T., Blickle, T., . . . Wynn, M. (2012). Process Mining manifesto. Paper presented at the , 99(1) 169-194. doi:10.1007/978-3-642-28108-2\_19
+
+\bibitem{b8} Sangsu Choi, Sookyoung Son, Minseok Song, Yong Jang (2014). Process Mining for manufactoring process analysis: A case Study.  
+
+\end{thebibliography}
+
+\end{document}
